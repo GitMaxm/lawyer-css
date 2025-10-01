@@ -50,6 +50,7 @@
 	<link rel="stylesheet" href="css/jquery.fancybox.min.css" type="text/css">
 	<link rel="stylesheet" href="css/animate.css" type="text/css">
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/form-modal.css" type="text/css">
 	<link rel="stylesheet" href="css/engine.css" type="text/css">
 
 	<!-- Скрипты (defer — чтобы не блокировать загрузку страницы) -->
@@ -93,20 +94,20 @@
 										<!-- Контейнер мобильного меню -->
 										<div class="mobile-menu-box">
 											<ul>
-												<li class="active"><a href="/">Главная</a></li>
+												<li class="active"><a href="">Главная</a></li>
 												<li><a href="#about">О нас</a></li>
-												<li><a href="/juridicheskie-uslugi/">Услуги</a></li>
-												<li><a href="/praktika/">Практика</a></li>
+												<li><a href="#services">Услуги</a></li>
 												<li><a href="#testimonials">Отзывы</a></li>
-												<li><a href="/contacts.html">Контакты</a></li>
+												<li><a href="#contacts">Контакты</a></li>
 											</ul>
 
 											<!-- Блок, видимый только в мобильной версии -->
 											<div class="for-mob">
 												<div class="header-mob-btn">
-													<span role="button" tabindex="0" class="sec-btn" title="Записаться">
+													<button role="button" onclick="openConsultationModal()"
+														class="sec-btn" title="Записаться">
 														Записаться
-													</span>
+													</button>
 												</div>
 											</div>
 										</div>
@@ -114,9 +115,10 @@
 
 									<!-- Кнопка "Записаться" в десктопной шапке -->
 									<div class="header-btn">
-										<span role="button" tabindex="0" class="sec-btn" title="Записаться">
+										<button role="button" onclick="openConsultationModal()" class="sec-btn"
+											title="Записаться">
 											Записаться
-										</span>
+										</button>
 									</div>
 
 									<!-- Тёмная тень под меню (css-класс уже есть в вашем проекте) -->
@@ -159,11 +161,11 @@
 								</p>
 
 								<!-- Кнопка "Записаться" (UniForm), доступна для скринридеров -->
-								<span role="button" tabindex="0" aria-label="Открыть форму записи к юристу"
-									class="sec-btn wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.4s"
-									title="Записаться на консультацию">
+								<button role="button" onclick="openConsultationModal()"
+									aria-label="Открыть форму записи к юристу" class="sec-btn wow fadeup-animation"
+									data-wow-duration="0.8s" data-wow-delay="0.4s" title="Записаться на консультацию">
 									Записаться на консультацию
-								</span>
+								</button>
 							</div>
 						</div>
 
@@ -190,10 +192,10 @@
 
 			<!-- Features Start -->
 			<section class="main-features" aria-label="Преимущества юридической помощи в Челябинске">
-				<div class="features-list">
+				<div class="features-list wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.5s">
 
 					<!-- Блок: Совет юриста -->
-					<div class="feature-box wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
+					<div class="feature-box">
 						<div class="icon">
 							<img src="images/Lawyer-Advice.svg" width="60" height="60"
 								alt="Бесплатная консультация юриста в Челябинске">
@@ -205,7 +207,7 @@
 					</div>
 
 					<!-- Блок: Юридическая помощь -->
-					<div class="feature-box wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.3s">
+					<div class="feature-box">
 						<div class="icon">
 							<img src="images/Legal-Counsel.svg" width="60" height="60"
 								alt="Юридическая помощь в Челябинске">
@@ -217,7 +219,7 @@
 					</div>
 
 					<!-- Блок: Представительство в суде -->
-					<div class="feature-box wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.4s">
+					<div class="feature-box">
 						<div class="icon">
 							<img src="images/Court-Performance.svg" width="60" height="60"
 								alt="Представление интересов в суде Челябинск">
@@ -229,7 +231,7 @@
 					</div>
 
 					<!-- Блок: Международный опыт -->
-					<div class="feature-box wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.5s">
+					<div class="feature-box">
 						<div class="icon">
 							<img src="images/Global-Lawyer.svg" width="60" height="60"
 								alt="Юрист с международным опытом">
@@ -258,9 +260,9 @@
 									role="img" aria-label="Юрист в Челябинске консультирует клиента"></div>
 								<div class="about-counter-box" id="about_counter">
 									<h3 class="h3-title">
-										<span data-count="235" class="counting">0</span>+
+										<span data-count="95" class="counting">0</span>%
 									</h3>
-									<h4 class="h4-title">Решенных дел</h4>
+									<h4 class="h4-title">Выигранных дел</h4>
 								</div>
 							</div>
 						</div>
@@ -271,112 +273,98 @@
 								data-wow-delay="0.2s">
 
 								<!-- Подзаголовок -->
-								<span class="sub-title">О НАС</span>
+								<span class="sub-title">ОБО МНЕ</span>
 
 								<!-- Заголовок с SEO -->
-								<h2 class="h2-title">Опытные юристы по семейному и наследственному праву в Челябинске
-								</h2>
+								<h2 class="h2-title">Юрист по семейному и наследственному праву в Челябинске</h2>
 
 								<!-- Основное описание -->
 								<p>
-									Наша юридическая служба объединяет специалистов с многолетним опытом работы в
-									семейном и наследственном праве.
-									Мы предоставляем комплексные решения: от консультаций и подготовки документов до
-									защиты интересов клиентов в суде.
-									Каждое дело ведется индивидуально, с учетом особенностей ситуации и актуальной
-									судебной практики.
+									Меня зовут Елена. Я практикующий юрист, веду частную практику с 2011 года.
+									Каждое дело я веду лично: разрабатываю стратегию, готовлю процессуальные документы и
+									сопровождаю клиента в суде до финального решения.
 								</p>
 
-								<!-- Аккордеон с миссией и видением -->
-								<div class="faq-accordion">
+								<ul>
+									<li>Семейное право</li>
+									<li>Наследство</li>
+									<li>Корпоративное право</li>
+									<li>Банкротство физических лиц</li>
+									<li>Медиация и проведение переговоров</li>
+									<li>Претензионная работа</li>
+									<li>Правовое сопровождение юридических лиц</li>
+									<li>Составление исковых заявлений</li>
+									<li>Составление всех видов процессуальных документов</li>
+									<li>Судебное представительство (АС, СОЮ)</li>
+								</ul>
 
-									<!-- Миссия -->
-									<div class="faq-accordion-box">
-										<div class="faq-accordion-title">
-											<h4 class="h4-title">Наша миссия</h4>
-											<span class="icon"><i class="fas fa-arrow-right"
-													aria-hidden="true"></i></span>
-										</div>
-										<div class="faq-accordion-content">
-											<p>Оказывать доступную и эффективную юридическую помощь жителям Челябинска,
-												помогая защищать их права в сфере семейных и наследственных дел.</p>
-										</div>
-									</div>
+								<p>
+									Клиенты отмечают, что со мной у них «всё под контролем» — я помню о каждом нюансе
+									дела и всегда предлагаю несколько вариантов решений для достижения положительного
+									результата.
+								</p>
 
-									<!-- Видение -->
-									<div class="faq-accordion-box">
-										<div class="faq-accordion-title">
-											<h4 class="h4-title">Наше видение</h4>
-											<span class="icon"><i class="fas fa-arrow-right"
-													aria-hidden="true"></i></span>
-										</div>
-										<div class="faq-accordion-content">
-											<p>Стать надежным юридическим партнером, которому доверяют при решении самых
-												сложных семейных и наследственных вопросов.</p>
-										</div>
-									</div>
+							</div>
+						</div>
+
+
+						<!-- Основной контейнер строки с выравниванием по центру -->
+						<div class="row align-items-center about-company wow fadeup-animation" data-wow-duration="0.8s"
+							data-wow-delay="0.5s">
+							<div class="col-lg-12">
+
+								<!-- Контентный блок с анимацией; добавлен aria-label для доступности -->
+								<div class="contact-us-content wow animated" style="visibility: visible;"
+									aria-label="Описание юридической компании">
+									<span class="sub-title">О НАС</span>
+									<h2 class="h2-title">О компании "Бизнес Вправе"</h2>
+									<p>
+										Наша юридическая служба объединяет специалистов с многолетним опытом работы в
+										семейном и наследственном праве.
+										Мы предоставляем комплексные решения: от консультаций и подготовки документов до
+										защиты интересов клиентов в суде.
+										Каждое дело ведется индивидуально, с учетом особенностей ситуации и актуальной
+										судебной практики.
+									</p>
+
+									<p>
+										Юрист по семейному и наследственному праву в Челябинске — это профессиональная
+										помощь в защите интересов семьи и сохранении имущества.
+										Мы сопровождаем клиентов в самых сложных вопросах: раздел имущества, оформление
+										наследства, алименты, опека и споры о детях.
+									</p>
+
+									<p>
+										Наша команда имеет богатый опыт ведения дел в судах Челябинска и Челябинской
+										области, а также успешную практику по делам федерального уровня.
+										Мы помогаем клиентам в стрессовых ситуациях и берем на себя все юридические
+										формальности.
+									</p>
+
+									<p>
+										Основные направления деятельности — семейное и наследственное право.
+										Мы готовим документы, представляем интересы в суде, консультируем по правам
+										супругов
+										и наследников, а также помогаем предотвратить конфликты на ранних стадиях.
+									</p>
+
+									<p>
+										Для нас каждый клиент — уникальная история.
+										Мы работаем с полной конфиденциальностью, честно объясняем перспективы дела и
+										предлагаем реальные решения.
+										Наша цель — защитить ваши права и сохранить семейные ценности.
+									</p>
 
 								</div>
-								<!-- /faq-accordion -->
-
 							</div>
 						</div>
+
 					</div>
-
-					<!-- Основной контейнер строки с выравниванием по центру -->
-					<div class="row align-items-center" style="margin-top: 20px;">
-						<div class="col-lg-12">
-
-							<!-- Контентный блок с анимацией; добавлен aria-label для доступности -->
-							<div class="contact-us-content wow animated" style="visibility: visible;"
-								aria-label="Описание юридической компании">
-
-								<h4 class="h4-title" style="margin: 25px 0;">О компании Юрист по семейному и
-									наследственному праву
-								</h4>
-
-								<!-- Первый абзац: представление компании -->
-								<p>
-									Юрист по семейному и наследственному праву в Челябинске — это профессиональная
-									помощь в защите интересов семьи и сохранении имущества.
-									Мы сопровождаем клиентов в самых сложных вопросах: раздел имущества, оформление
-									наследства, алименты, опека и споры о детях.
-								</p>
-
-								<!-- Второй абзац: подтверждение опыта и географии работы -->
-								<p>
-									Наша команда имеет богатый опыт ведения дел в судах Челябинска и Челябинской
-									области, а также успешную практику по делам федерального уровня.
-									Мы помогаем клиентам в стрессовых ситуациях и берем на себя все юридические
-									формальности.
-								</p>
-
-								<!-- Третий абзац: основные направления работы -->
-								<p>
-									Основные направления деятельности — семейное и наследственное право.
-									Мы готовим документы, представляем интересы в суде, консультируем по правам супругов
-									и наследников, а также помогаем предотвратить конфликты на ранних стадиях.
-								</p>
-
-								<!-- Четвёртый абзац: подход к клиентам -->
-								<p>
-									Для нас каждый клиент — уникальная история.
-									Мы работаем с полной конфиденциальностью, честно объясняем перспективы дела и
-									предлагаем реальные решения.
-									Наша цель — защитить ваши права и сохранить семейные ценности.
-								</p>
-
-							</div>
-						</div>
-					</div>
-
-				</div>
 			</section>
 			<!-- About End -->
 
-
-			<!-- Case Study Start -->
-			<section class="main-case-study">
+			<!-- Services Start -->
+			<!-- <section class="main-case-study" id="services">
 				<div class="case-study-slider swiper">
 					<div class="swiper-wrapper">
 
@@ -553,9 +541,68 @@
 
 					</div>
 				</div>
-			</section>
-			<!-- Case Study End -->
+			</section> -->
+			<!-- Services End -->
+			<!-- Services Start -->
+			<section class="main-services" id="services" aria-label="Услуги юриста">
+				<div class="container">
+					<div class="wow fadeup-animation" data-wow-duration="0.8s" data-wow-delay="0.2s">
+						<!-- Подзаголовок -->
+						<span class="sub-title">УСЛУГИ ЮРИСТА</span>
 
+						<!-- Заголовок с SEO -->
+						<h2 class="h2-title">Юрист по семейному и наследственному праву в Челябинске</h2>
+
+						<div class="row" role="list">
+							<!-- Колонка 1: Семейное право -->
+							<div class="col-lg-6 mb-4" role="listitem">
+								<div class="service-column h-100">
+									<h3 class="service-column__title">Семейное право</h3>
+									<ul class="service-list list-unstyled" aria-label="Услуги по семейному праву">
+										<li class="service-item">Раздел имущества супругов с выгодой для вас</li>
+										<li class="service-item">Расторжение брака без согласия супруга(ги)</li>
+										<li class="service-item">Взыскание алиментов</li>
+										<li class="service-item">Определение места жительства ребенка</li>
+										<li class="service-item">Определение порядка общения с ребенком</li>
+										<li class="service-item">Ограничение, лишение родительских прав</li>
+										<li class="service-item">Установление/оспаривание отцовства</li>
+										<li class="service-item">Составление Брачного договора</li>
+										<li class="service-item">Составление соглашения о разделе имущества</li>
+									</ul>
+								</div>
+							</div>
+
+							<!-- Колонка 2: Наследство -->
+							<div class="col-lg-6 mb-4" role="listitem">
+								<div class="service-column h-100">
+									<h3 class="service-column__title">Наследство</h3>
+									<ul class="service-list list-unstyled" aria-label="Услуги по наследственному праву">
+										<li class="service-item">Оформление наследства (с пропущенным сроком)</li>
+										<li class="service-item">Фактическое принятие наследства</li>
+										<li class="service-item">Признание наследника недостойным</li>
+										<li class="service-item">Включение в состав незарегистрированного имущества
+											наследодателем</li>
+										<li class="service-item">Оспаривание завещания</li>
+										<li class="service-item">Раздел имущества в порядке наследования</li>
+										<li class="service-item">Признание наследодателя банкротом</li>
+										<li class="service-item">Обжалование действий нотариуса</li>
+										<li class="service-item">Установление родственных связей</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="d-flex justify-content-center">
+							<button role="button" onclick="openConsultationModal()"
+								aria-label="Открыть форму записи к юристу" class="sec-btn wow fadeup-animation"
+								data-wow-duration="0.8s" data-wow-delay="0.4s" title="Записаться на консультацию">
+								Записаться на консультацию
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Services End -->
 
 			<!-- Testimonials Start -->
 			<section class="main-testimonials" id="testimonials" aria-labelledby="testimonials-title">
@@ -744,7 +791,7 @@
 			<!-- Testimonials End -->
 
 			<!-- Footer Start -->
-			<footer class="site-footer" role="contentinfo" aria-labelledby="footer-title">
+			<footer class="site-footer" role="contentinfo" aria-labelledby="footer-title" id="contacts">
 				<span class="bg-icon" aria-hidden="true"></span>
 				<span class="footer-bg-shape">
 					<img src="images/testimonial-bg-shape.svg" width="405" height="641"
@@ -812,17 +859,15 @@
 									<div class="footer-link">
 										<h4 class="h4-title footer-title">Меню</h4>
 										<ul>
-											<li><a href="/"
+											<li><a href=""
 													title="Главная страница юридической компании в Челябинске">Главная</a>
 											</li>
-											<li><a href="/about.html" title="О компании и юристах">О нас</a></li>
-											<li><a href="/juridicheskie-uslugi/"
-													title="Все юридические услуги">Услуги</a></li>
-											<li><a href="/praktika/" title="Судебная практика юристов">Практика</a></li>
-											<li><a href="/1-otzyvy-o-nas.html"
-													title="Отзывы клиентов о юристах">Отзывы</a></li>
-											<li><a href="/contacts.html" title="Связаться с юристом">Контакты</a></li>
-											<li><a href="/polzovatelskoe-soglashenie.html"
+											<li><a href="#about" title="О компании и юристах">О нас</a></li>
+											<li><a href="#services" title="Все юридические услуги">Услуги</a></li>
+											<li><a href="#testimonials" title="Отзывы клиентов о юристах">Отзывы</a>
+											</li>
+											<li><a href="#contacts" title="Связаться с юристом">Контакты</a></li>
+											<li><a href="policy.html"
 													title="Политика обработки персональных данных">Политика обработки
 													персональных данных</a></li>
 										</ul>
@@ -842,7 +887,8 @@
 													class="fas fa-map-marker-alt"></i></span>
 											<div class="text">
 												<div>
-													<span>г. Челябинск, ул. Ленина, д. 10</span>
+													<span>г. Челябинск, Комсомольский проспект, 10/7,офис 201
+														(по карте д.10 с7)</span>
 												</div>
 											</div>
 										</li>
@@ -850,9 +896,9 @@
 											<span class="icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
 											<div class="text">
 												<div>
-													<a href="mailto:info@yur-sluzhba74.ru"
+													<a href="mailto:biznes-sovetnik174@mail.ru"
 														title="Написать письмо юристу в Челябинске">
-														info@yur-sluzhba74.ru
+														biznes-sovetnik174@mail.ru
 													</a>
 												</div>
 											</div>
@@ -862,8 +908,9 @@
 													class="fas fa-phone-alt"></i></span>
 											<div class="text">
 												<div>
-													<a href="tel:+73512345678" title="Позвонить юристу в Челябинске">+7
-														(351) 234-56-78</a>
+													<a href="tel:+79822937717" title="Позвонить юристу в Челябинске">
+														+7 (982) 293-77-17
+													</a>
 												</div>
 											</div>
 										</li>
@@ -876,7 +923,7 @@
 					<!-- Нижний блок -->
 					<div class="footer-bottom">
 						<div class="footer-logo">
-							<a href="/" title="Юрист по семейному и наследственному праву Челябинск">
+							<a href="" title="Юрист по семейному и наследственному праву Челябинск">
 								<img src="images/logow.png" height="47" alt="Логотип Юридической службы Челябинск">
 							</a>
 						</div>
@@ -899,8 +946,196 @@
 			<!-- Scroll To Top End -->
 
 		</div>
+
+		<!-- Модальное окно -->
+		<div id="consultationModal" class="modal-overlay" style="display: none;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Бесплатный первичный прием</h3>
+					<span class="modal-close">&times;</span>
+				</div>
+				<div class="modal-body">
+					<p class="modal-description">Позвоните нам по телефону
+						<a href="tel:+79822937717" title="Позвонить юристу в Челябинске">
+							+7 (982) 293-77-17
+						</a>
+						или заполните форму ниже,
+						чтобы получить бесплатную первичную консультацию.
+					</p>
+
+					<div class="contact-form">
+						<form id="consultation-form">
+							<div class="row">
+								<div class="col-12">
+									<div class="form-box">
+										<div class="form-input-box">
+											<input type="text" class="form-input" placeholder="Ваше имя" required>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="form-box">
+										<div class="form-input-box">
+											<input type="tel" class="form-input" placeholder="+7 (___) __-__-__"
+												required>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-box">
+								<div class="form-input-box">
+									<textarea class="form-input" placeholder="Опишите вашу ситуацию"
+										rows="4"></textarea>
+								</div>
+							</div>
+
+							<div class="form-box checkbox">
+								<label>
+									<input type="checkbox" required>
+									Подтверждаю, что даю согласие на обработку персональных данных и ознакомлен с
+									политикой конфиденциальности и обработкой персональных данных.
+								</label>
+							</div>
+
+							<div class="form-box text-center">
+								<button role="button" class="sec-btn" title="Отправить">
+									Отправить
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Form Start -->
+		<!-- <section class="main-form">
+			<div class="container">
+				<div class="title">
+					<span class="sub-title">Бесплатный первичный прием</span>
+					<h2 class="h2-title">Получите бесплатную консультацию</h2>
+					<p>Позвоните нам по телефону +7 (861) 230-01-09 или заполните форму ниже, чтобы получить
+						бесплатную первичную консультацию.</p>
+				</div>
+
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+						<div class="contact-form">
+							<form id="consultation-form">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-box">
+											<div class="form-input-box">
+												<input type="text" class="form-input" placeholder="Ваше имя" required>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-box">
+											<div class="form-input-box">
+												<input type="tel" class="form-input" placeholder="+7 (___) __-__-__"
+													required>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-box">
+									<div class="form-input-box">
+										<textarea class="form-input" placeholder="Опишите вашу ситуацию"
+											rows="4"></textarea>
+									</div>
+								</div>
+
+								<div class="form-box checkbox">
+									<label>
+										<input type="checkbox" required>
+										Подтверждаю, что даю согласие на обработку персональных данных и ознакомлен
+										с политикой конфиденциальности и обработкой персональных данных.
+									</label>
+								</div>
+
+								<div class="form-box text-center">
+									<span role="button"  class="sec-btn" title="Отправить">
+										Отправить
+									</span>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section> -->
+		<!-- Form End -->
 	</div>
 
+
+	<script>
+		// Функции для работы модального окна
+		function openConsultationModal() {
+			const modal = document.getElementById('consultationModal');
+			if (modal) {
+				modal.style.display = 'flex';
+				document.body.style.overflow = 'hidden';
+			}
+		}
+
+		function closeConsultationModal() {
+			const modal = document.getElementById('consultationModal');
+			if (modal) {
+				modal.style.display = 'none';
+				document.body.style.overflow = 'auto';
+			}
+		}
+
+		// Инициализация при загрузке страницы
+		document.addEventListener('DOMContentLoaded', function () {
+			// Закрытие модального окна
+			const modal = document.getElementById('consultationModal');
+			const closeBtn = document.querySelector('.modal-close');
+
+			if (closeBtn) {
+				closeBtn.addEventListener('click', closeConsultationModal);
+			}
+
+			// Закрытие при клике вне модального окна
+			if (modal) {
+				modal.addEventListener('click', function (e) {
+					if (e.target === modal) {
+						closeConsultationModal();
+					}
+				});
+			}
+
+			// Закрытие по ESC
+			document.addEventListener('keydown', function (e) {
+				if (e.key === 'Escape') {
+					closeConsultationModal();
+				}
+			});
+
+			// Маска для телефона в модальном окне
+			const phoneInput = modal ? modal.querySelector('input[type="tel"]') : null;
+			if (phoneInput) {
+				phoneInput.addEventListener('input', function (e) {
+					let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+					e.target.value = '+7' + (x[2] ? ' (' + x[2] : '') + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+				});
+			}
+
+			// Обработка отправки формы
+			const form = modal ? modal.querySelector('#consultation-form') : null;
+			if (form) {
+				form.addEventListener('submit', function (e) {
+					e.preventDefault();
+					// Здесь код для отправки формы
+					alert('Форма отправлена! Мы свяжемся с вами в ближайшее время.');
+					form.reset();
+					closeConsultationModal();
+				});
+			}
+		});
+	</script>
 	<!-- Bootstrap JS Link -->
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/popper.min.js"></script>
@@ -920,61 +1155,12 @@
 	<!-- Custom JS Link -->
 	<script src="js/custom.js"></script>
 	<script src="js/custom-scroll-count.js"></script>
-	<script>
-		< !-
-		var dle_root = '/';
-		var dle_admin = '';
-		var dle_login_hash = '119c7e8c477f8a85b60c4478642a5ffd99c17523';
-		var dle_group = 5;
-		var dle_skin = 'Default';
-		var dle_wysiwyg = '-1';
-		var quick_wysiwyg = '2';
-		var dle_min_search = '4';
-		var dle_act_lang = ["Да", "Нет", "Ввод", "Отмена", "Сохранить", "Удалить", "Загрузка. Пожалуйста, подождите..."];
-		var menu_short = 'Быстрое редактирование';
-		var menu_full = 'Полное редактирование';
-		var menu_profile = 'Просмотр профиля';
-		var menu_send = 'Отправить сообщение';
-		var menu_uedit = 'Админцентр';
-		var dle_info = 'Информация';
-		var dle_confirm = 'Подтверждение';
-		var dle_prompt = 'Ввод информации';
-		var dle_req_field = 'Заполните все необходимые поля';
-		var dle_del_agree = 'Вы действительно хотите удалить? Данное действие невозможно будет отменить';
-		var dle_spam_agree = 'Вы действительно хотите отметить пользователя как спамера? Это приведёт к удалению всех его комментариев';
-		var dle_c_title = 'Отправка жалобы';
-		var dle_complaint = 'Укажите текст Вашей жалобы для администрации:';
-		var dle_mail = 'Ваш e-mail:';
-		var dle_big_text = 'Выделен слишком большой участок текста.';
-		var dle_orfo_title = 'Укажите комментарий для администрации к найденной ошибке на странице:';
-		var dle_p_send = 'Отправить';
-		var dle_p_send_ok = 'Уведомление успешно отправлено';
-		var dle_save_ok = 'Изменения успешно сохранены. Обновить страницу?';
-		var dle_reply_title = 'Ответ на комментарий';
-		var dle_tree_comm = '0';
-		var dle_del_news = 'Удалить статью';
-		var dle_sub_agree = 'Вы действительно хотите подписаться на комментарии к данной публикации?';
-		var dle_captcha_type = '0';
-		var DLEPlayerLang = { prev: 'Предыдущий', next: 'Следующий', play: 'Воспроизвести', pause: 'Пауза', mute: 'Выключить звук', unmute: 'Включить звук', settings: 'Настройки', enterFullscreen: 'На полный экран', exitFullscreen: 'Выключить полноэкранный режим', speed: 'Скорость', normal: 'Обычная', quality: 'Качество', pip: 'Режим PiP' };
-		var allow_dle_delete_news = false;
 
-		//-->
-	</script>
 	<script src="js/lib.js"></script>
-
-	<script>
-		jQuery(function ($) {
-			$.get("/templates/Default/images/sprite.svg", function (data) {
-				var div = document.createElement("div");
-				div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
-				document.body.insertBefore(div, document.body.childNodes[0]);
-			});
-		});
-	</script>
 
 
 
 
 </body>
 
-</html><!-- DataLife Engine Copyright SoftNews Media Group (http://dle-news.ru) -->
+</html>

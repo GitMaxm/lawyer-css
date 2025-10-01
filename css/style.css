@@ -43,12 +43,12 @@ Theme Version: 1.0
 
 /*==========Common CSS Start==========*/
 :root {
-  --primary-color: #b68c5a;
+  --primary-color: #b18c70;
   --primary-shadow: 0px 4px 30px -1px #cba6724d;
-  --secondary-color: #011c1a;
+  --secondary-color: #252525;
   --secondary-shadow: 0px 4px 20px -1px #011c1a33;
-  --common-color: #666666;
-  --bg-color: #f4ede7;
+  --common-color: #434343;
+  --bg-color: #fff5ed;
   --gray-color: #c4c4c4;
   --white-color: #ffffff;
   --black-color: #000000;
@@ -57,7 +57,7 @@ Theme Version: 1.0
   --overlay-color: linear-gradient(
     180deg,
     rgba(244, 237, 231, 0) 29.7%,
-    #f4ede7 195.05%
+    #fff5ed 195.05%
   );
   --body-font: "Poppins", sans-serif;
   --title-font: "PT Serif", serif;
@@ -1195,7 +1195,7 @@ label {
 /*==========About Us CSS Start==========*/
 .main-about-us {
   /* margin: var(--spacing) 0; */
-  padding: var(--spacing) 0;
+  padding-top: var(--spacing);
 }
 
 .about-us-img-box {
@@ -1387,6 +1387,61 @@ label {
 }
 
 /*==========Case Study CSS End==========*/
+
+/*==========Services new CSS Start==========*/
+.main-services {
+  padding-top: var(--spacing);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service-column {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.service-column__title {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+  text-align: center;
+}
+
+.service-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f5f5f5;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.service-item:before {
+  content: "•";
+  color: var(--primary-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.service-item:last-child {
+  border-bottom: none;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+/*==========Services new CSS End==========*/
 
 /*==========Our Services CSS Start==========*/
 .main-our-services {
@@ -1644,7 +1699,7 @@ label {
 
 /*==========Testimonials CSS Start==========*/
 .main-testimonials {
-  padding: 113px 0 var(--spacing) 0;
+  padding: var(--spacing) 0;
 }
 
 .testimonial-bg-shape {
@@ -2390,6 +2445,10 @@ label {
 /*==========Scroll To Top CSS End==========*/
 
 /*==========About Us Page CSS Start==========*/
+
+.about-company {
+  padding-top: var(--spacing);
+}
 /* Inner Banner CSS Start */
 .main-inner-banner {
   min-height: 500px;
@@ -5289,13 +5348,6 @@ label {
   }
 
   /* Blog Detail Page CSS End */
-
-  /* Contact Us Page CSS Start */
-  .contact-us-content {
-    margin-top: 50px;
-  }
-
-  /* Contact Us Page CSS End */
 }
 
 @media screen and (max-width: 767px) {
