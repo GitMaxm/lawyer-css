@@ -131,6 +131,15 @@ p:last-child {
   margin-bottom: 0;
 }
 
+.link {
+  color: var(--primary-color);
+  text-decoration: underline !important;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
 .title {
   text-align: center;
   margin-bottom: 45px;
@@ -156,7 +165,7 @@ p:last-child {
 }
 
 .h1-title {
-  font-size: 50px;
+  font-size: clamp(1.563rem, 1.205rem + 1.79vw, 2.813rem); /* 45 - 25px */
   /* line-height: 90px; */
   color: var(--secondary-color);
   font-weight: bold;
@@ -2351,11 +2360,11 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--primary-color);
+  /* background: var(--primary-color); */
   border-radius: 50%;
   color: var(--white-color);
   flex-shrink: 0;
-  font-size: 15px;
+  font-size: 30px;
 }
 
 .footer-contact ul li .text a {
@@ -2401,7 +2410,59 @@ label {
 .copy-right p a:hover {
   text-decoration: underline;
 }
+.footer-bottom {
+  background: var(--dark-color);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 30px;
+  border-radius: 20px;
+}
 
+.footer-legal-links a {
+  font-size: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: var(--white-color);
+  opacity: 0.75;
+}
+
+.footer-legal-links a:hover {
+  opacity: 1;
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .footer-bottom {
+    height: auto;
+    padding: 20px 15px;
+    text-align: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-legal-links .list-inline-item {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .footer-legal-links {
+    order: 3;
+    width: 100%;
+  }
+
+  .footer-logo {
+    order: 1;
+  }
+
+  .copy-right {
+    order: 2;
+  }
+}
 /*==========Footer CSS End==========*/
 
 /*==========Scroll To Top CSS Start==========*/
@@ -5353,7 +5414,7 @@ label {
 @media screen and (max-width: 767px) {
   /* Common CSS Start */
   .h1-title {
-    font-size: 45px;
+    /* font-size: 45px; */
     /* line-height: 55px; */
   }
 
@@ -5666,11 +5727,6 @@ label {
     padding: 0 30px;
   }
 
-  .h1-title {
-    font-size: 40px;
-    line-height: 50px;
-  }
-
   .h2-title {
     font-size: 35px;
     line-height: 45px;
@@ -5893,11 +5949,6 @@ label {
   .sub-title {
     font-size: 16px;
     line-height: 23px;
-  }
-
-  .h1-title {
-    font-size: 35px;
-    line-height: 45px;
   }
 
   .h2-title {

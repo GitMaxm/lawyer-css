@@ -1,0 +1,7 @@
+.link {
+  color: var(--primary-color);
+}
+
+.link:hover {
+  opacity: 0.8;
+}

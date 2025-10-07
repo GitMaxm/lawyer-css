@@ -34,7 +34,7 @@
     <meta name="google-site-verification" content="umfR5eu5t-GOt6oCxeLHBFTrRYqryfC8PKgJ0YRU_nU">
 
     <!-- Иконка -->
-    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="images/logow.png" type="image/png">
 
     <!-- Быстрая и безопасная загрузка шрифтов -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,6 +42,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@300;400;500;600;700;900&display=swap"
         rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Стили -->
     <link href="css/default.css" rel="stylesheet" type="text/css">
@@ -58,7 +61,6 @@
     <!-- Скрипты -->
     <script src="js/jquery3.js"></script>
     <script src="js/jqueryui3.js"></script>
-    <script src="js/dle_js.js"></script>
     <script src="js/jquery.mask.min.js"></script>
 
     <!-- Рекомендуемая современная meta — тема браузера (опционально) -->
@@ -96,7 +98,7 @@
                                         <!-- Контейнер мобильного меню -->
                                         <div class="mobile-menu-box">
                                             <ul>
-                                                <li class="active"><a href="">Главная</a></li>
+                                                <!-- <li class="active"><a href="">Главная</a></li> -->
                                                 <li><a href="#about">О нас</a></li>
                                                 <li><a href="#services">Услуги</a></li>
                                                 <li><a href="#testimonials">Отзывы</a></li>
@@ -311,8 +313,8 @@
 
 
                         <!-- Основной контейнер строки с выравниванием по центру -->
-                        <div class="row align-items-center about-company wow fadeup-animation" data-wow-duration="0.8s"
-                            data-wow-delay="0.5s">
+                        <div class="col-lg-12 align-items-center about-company wow fadeup-animation"
+                            data-wow-duration="0.8s" data-wow-delay="0.5s">
                             <div class="col-lg-12">
 
                                 <!-- Контентный блок с анимацией; добавлен aria-label для доступности -->
@@ -610,8 +612,9 @@
             <section class="main-testimonials" id="testimonials" aria-labelledby="testimonials-title">
                 <span class="testimonial-bg-shape">
                     <img src="images/testimonial-bg-shape.svg" width="405" height="641"
-                        alt="Фон секции с отзывами клиентов о юристах в Челябинске">
+                        alt="Декоративный фон секции отзывов">
                 </span>
+
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -620,170 +623,155 @@
                                 <h2 class="h2-title" id="testimonials-title">Что говорят о нашей юридической помощи</h2>
                                 <p class="seo-text">
                                     Здесь собраны реальные отзывы клиентов о юристах по семейному и наследственному
-                                    праву в Челябинске.
-                                    Мы оказываем услуги частным лицам и бизнесу, помогая решать сложные правовые
-                                    вопросы.
+                                    праву в Челябинске. Мы оказываем услуги частным лицам и бизнесу, помогая решать
+                                    сложные правовые вопросы. Отзывы взяты из
+                                    <a class="link" href="https://vk.com/topic-220137181_50008433" target="_blank"
+                                        rel="noopener noreferrer">
+                                        группы в ВК</a>.
                                 </p>
                             </div>
+
                             <div class="testimonial-slider swiper" role="region"
                                 aria-label="Слайдер с отзывами клиентов">
                                 <div class="swiper-wrapper">
 
                                     <!-- Отзыв 1 -->
                                     <div class="swiper-slide" role="group" aria-roledescription="slide"
-                                        aria-label="Отзыв 1">
+                                        aria-label="1 из 7">
                                         <div class="testimonial-box">
-                                            <span class="quote-icon">
-                                                <img src="images/Quote.svg" width="76" height="56"
-                                                    alt="Цитата из отзыва">
+                                            <span class="quote-icon" aria-hidden="true">
+                                                <img src="images/Quote.svg" width="76" height="56" alt="">
                                             </span>
-                                            <div class="review-by">
-                                                <h3 class="h4-title">Алексей Морозов</h3>
-                                            </div>
-                                            <div class="testimonial-text">
+                                            <blockquote class="testimonial-text">
                                                 <p>
-                                                    Обратился за помощью при разделе имущества после развода.
-                                                    Юристы из Челябинска грамотно подготовили все документы и
-                                                    представили мои интересы в суде.
-                                                    Результат превзошёл ожидания — я сохранил своё имущество и нервы.
-                                                    Рекомендую эту команду!
+                                                    Елена Юрьевна! Хочу выразить вам благодарность за решение
+                                                    моего нестандартного запроса. Только вы смогли мне предложить
+                                                    решение, еще и сэкономив не мало затрат. Вы нестандартно
+                                                    подходите к решению вопросов, я всегда восхищаюсь тем, что
+                                                    у вас есть решение любого вопроса. Вас рекомендую. Процветание
+                                                    вам, развития и много благодарных клиентов. Еще раз благодарю.
                                                 </p>
-                                            </div>
+                                            </blockquote>
                                         </div>
                                     </div>
 
                                     <!-- Отзыв 2 -->
                                     <div class="swiper-slide" role="group" aria-roledescription="slide"
-                                        aria-label="Отзыв 2">
+                                        aria-label="2 из 7">
                                         <div class="testimonial-box">
-                                            <span class="quote-icon">
-                                                <img src="images/Quote.svg" width="76" height="56"
-                                                    alt="Цитата из отзыва">
+                                            <span class="quote-icon" aria-hidden="true">
+                                                <img src="images/Quote.svg" width="76" height="56" alt="">
                                             </span>
-                                            <div class="review-by">
-                                                <h3 class="h4-title">Марина Васильева</h3>
-                                            </div>
-                                            <div class="testimonial-text">
+                                            <blockquote class="testimonial-text">
                                                 <p>
-                                                    Юрист помог составить брачный договор. Всё объяснили простыми
-                                                    словами,
-                                                    учли все нюансы и оформили документ юридически грамотно.
-                                                    Очень довольна, что нашла специалистов в Челябинске именно здесь.
+                                                    Добрый день! Елена, очень хочу оставить отзыв о нашем
+                                                    сотрудничестве! Спасибо вам огромное за помощь в оформлении
+                                                    развода и раздела имущества! Все время мы были с вами за
+                                                    2000 км, но я ни сколько не переживала, вы всегда были на
+                                                    связи, все провели дистанционно. Учли все риски и положительно
+                                                    для меня завершили этот непростой процесс всего за 5 месяцев)
+                                                    (хотя изначально я настраивалась на год) Вы настоящий профессионал.
+                                                    Я получала ответы на любой свой вопрос, даже непосредственно
+                                                    не связанный с разводом, и всегда было в точку! Желаю вам
+                                                    успехов, процветания и удачи! Спасибо еще раз огромное за помощь!
                                                 </p>
-                                            </div>
+                                            </blockquote>
                                         </div>
                                     </div>
 
                                     <!-- Отзыв 3 -->
                                     <div class="swiper-slide" role="group" aria-roledescription="slide"
-                                        aria-label="Отзыв 3">
+                                        aria-label="3 из 7">
                                         <div class="testimonial-box">
-                                            <span class="quote-icon">
-                                                <img src="images/Quote.svg" width="76" height="56"
-                                                    alt="Цитата из отзыва">
+                                            <span class="quote-icon" aria-hidden="true">
+                                                <img src="images/Quote.svg" width="76" height="56" alt="">
                                             </span>
-                                            <div class="review-by">
-                                                <h3 class="h4-title">Игорь Соколов</h3>
-                                            </div>
-                                            <div class="testimonial-text">
+                                            <blockquote class="testimonial-text">
                                                 <p>
-                                                    Мне нужно было оформить наследство. Юристы подробно рассказали, как
-                                                    всё проходит,
-                                                    и подготовили все документы без задержек. В Челябинске таких
-                                                    специалистов мало —
-                                                    я очень рад, что обратился именно сюда.
+                                                    Уважаемая, Елена Юрьевна! Хочу выразить Вам огромную
+                                                    благодарность за Ваш профессионализм в решении юридических
+                                                    вопросов, представлении и ведении дел в суде!
                                                 </p>
-                                            </div>
+                                            </blockquote>
                                         </div>
                                     </div>
 
                                     <!-- Отзыв 4 -->
                                     <div class="swiper-slide" role="group" aria-roledescription="slide"
-                                        aria-label="Отзыв 4">
+                                        aria-label="4 из 7">
                                         <div class="testimonial-box">
-                                            <span class="quote-icon">
-                                                <img src="images/Quote.svg" width="76" height="56"
-                                                    alt="Цитата из отзыва">
+                                            <span class="quote-icon" aria-hidden="true">
+                                                <img src="images/Quote.svg" width="76" height="56" alt="">
                                             </span>
-                                            <div class="review-by">
-                                                <h3 class="h4-title">Светлана Кузнецова</h3>
-                                            </div>
-                                            <div class="testimonial-text">
+                                            <blockquote class="testimonial-text">
                                                 <p>
-                                                    Обращалась за помощью по алиментам.
-                                                    Юристы чётко выстроили позицию и помогли выиграть суд.
-                                                    Благодарю за профессионализм и человеческое отношение!
+                                                    Уважаемая ЕЛЕНА ЮРЬЕВНА) здравствуйте ещё раз, хотел вас
+                                                    ещё раз отблагодарить, за оказанную юридическую помощь,
+                                                    в разрешении моих судебных тяжб, вы очень мне помогли,
+                                                    добиться справедливости, очень вас благодарю, вы специалист
+                                                    с БОЛЬШОЙ БУКВЫ, МАСТЕР СВОЕГО ДЕЛА, дай вам бог здоровья,
+                                                    желаю вам процветания, и новых побед, вы умничка, вообщем
+                                                    крепко вас обнял, приподнял, покружил, поставил)) будьте здоровы
                                                 </p>
-                                            </div>
+                                            </blockquote>
                                         </div>
                                     </div>
 
                                     <!-- Отзыв 5 -->
                                     <div class="swiper-slide" role="group" aria-roledescription="slide"
-                                        aria-label="Отзыв 5">
+                                        aria-label="5 из 7">
                                         <div class="testimonial-box">
-                                            <span class="quote-icon">
-                                                <img src="images/Quote.svg" width="76" height="56"
-                                                    alt="Цитата из отзыва">
+                                            <span class="quote-icon" aria-hidden="true">
+                                                <img src="images/Quote.svg" width="76" height="56" alt="">
                                             </span>
-                                            <div class="review-by">
-                                                <h3 class="h4-title">Владимир Орлов</h3>
-                                            </div>
-                                            <div class="testimonial-text">
+                                            <blockquote class="testimonial-text">
                                                 <p>
-                                                    Нужна была консультация по трудовому спору с работодателем.
-                                                    Адвокат всё разъяснил, подготовил жалобы и документы.
-                                                    Дело решилось в мою пользу. Очень рекомендую этих юристов в
-                                                    Челябинске!
+                                                    Уважаемая, Елена Юрьевна! Хочу выразить Вам огромную
+                                                    благодарность за Ваш профессионализм в решении юридических
+                                                    вопросов, представлении и ведении дел в суде!
                                                 </p>
-                                            </div>
+                                            </blockquote>
                                         </div>
                                     </div>
 
                                     <!-- Отзыв 6 -->
                                     <div class="swiper-slide" role="group" aria-roledescription="slide"
-                                        aria-label="Отзыв 6">
+                                        aria-label="6 из 7">
                                         <div class="testimonial-box">
-                                            <span class="quote-icon">
-                                                <img src="images/Quote.svg" width="76" height="56"
-                                                    alt="Цитата из отзыва">
+                                            <span class="quote-icon" aria-hidden="true">
+                                                <img src="images/Quote.svg" width="76" height="56" alt="">
                                             </span>
-                                            <div class="review-by">
-                                                <h3 class="h4-title">Екатерина Романова</h3>
-                                            </div>
-                                            <div class="testimonial-text">
+                                            <blockquote class="testimonial-text">
                                                 <p>
-                                                    Обращалась по вопросу дарственной на квартиру.
-                                                    Юристы быстро подготовили все документы и избавили меня от походов
-                                                    по инстанциям.
-                                                    Спасибо за грамотную юридическую помощь!
+                                                    Хочу выразить огромную благодарность Елене Юрьевне за
+                                                    то что помогла нам избавиться от огромных долгов. Специалист
+                                                    высокого уровня на всем протяжении процесса ни разу не
+                                                    возникло дискомфорта в работе. Огромное спасибо за ваш труд
                                                 </p>
-                                            </div>
+                                            </blockquote>
                                         </div>
                                     </div>
 
                                     <!-- Отзыв 7 -->
                                     <div class="swiper-slide" role="group" aria-roledescription="slide"
-                                        aria-label="Отзыв 7">
+                                        aria-label="7 из 7">
                                         <div class="testimonial-box">
-                                            <span class="quote-icon">
-                                                <img src="images/Quote.svg" width="76" height="56"
-                                                    alt="Цитата из отзыва">
+                                            <span class="quote-icon" aria-hidden="true">
+                                                <img src="images/Quote.svg" width="76" height="56" alt="">
                                             </span>
-                                            <div class="review-by">
-                                                <h3 class="h4-title">Дмитрий Захаров</h3>
-                                            </div>
-                                            <div class="testimonial-text">
+                                            <blockquote class="testimonial-text">
                                                 <p>
-                                                    Помогли в арбитражном споре по бизнесу.
-                                                    Специалисты действовали профессионально и уверенно.
-                                                    Без их поддержки я бы потерял контракт. Огромное спасибо!
+                                                    Елена Юрьевна, выражаю Вам огромную благодарность за быструю,
+                                                    а самое главное результативную помощь !!! Благодаря, поданному
+                                                    Вами заявлению о включении в реестр требований участников
+                                                    строительства, я не осталась без имущества. Большое Вам спасибо !!!!
                                                 </p>
-                                            </div>
+                                            </blockquote>
                                         </div>
                                     </div>
 
                                 </div>
+
                                 <div class="swiper-pagination" aria-label="Навигация по отзывам"></div>
                             </div>
                         </div>
@@ -802,118 +790,108 @@
                 <div class="container">
                     <div class="footer-top">
                         <div class="row">
-                            <!-- О компании -->
-                            <div class="col-lg-6">
-                                <div class="footer-info">
-                                    <h4 id="footer-title" class="visually-hidden">Юрист по семейному и наследственному
-                                        праву в Челябинске</h4>
-                                    <p>
-                                        В "Юридической Службе Челябинск" мы предоставляем профессиональную помощь в
-                                        области
-                                        <strong>семейного и наследственного права</strong>. Наша команда опытных юристов
-                                        помогает
-                                        решать споры о разделе имущества, алиментах, наследстве и других сложных
-                                        ситуациях.
-                                        Мы гарантируем индивидуальный подход и защиту ваших интересов.
-                                    </p>
-                                </div>
-                            </div>
+                            <!-- О компании и карта -->
+                            <div class="col-md-12 mb-4">
+                                <div class="row g-5">
 
-                            <!-- Услуги -->
-                            <!-- <div class="col-lg-3 col-sm-6 col-md-4">
-								<div class="footer-link-wp">
-									<div class="footer-link">
-										<h4 class="h4-title footer-title">Услуги</h4>
-										<ul>
-											<li><a href="/juridicheskie-uslugi/24-pensionnye-jurist.html"
-													alt="Пенсионный юрист Челябинск"
-													title="Пенсионный юрист в Челябинске">Пенсионный юрист</a></li>
-											<li><a href="/juridicheskie-uslugi/22-jurist-po-zaschite-prav-potrebitelej.html"
-													alt="Юрист по защите прав потребителей Челябинск"
-													title="Юрист по защите прав потребителей">Защита прав
-													потребителей</a></li>
-											<li><a href="/juridicheskie-uslugi/27-jurist-po-ugolovnym-delam.html"
-													alt="Уголовный юрист Челябинск"
-													title="Юрист по уголовным делам">Уголовные дела</a></li>
-											<li><a href="/juridicheskie-uslugi/21-jurist-po-grazhdanskomu-pravu.html"
-													alt="Юрист по гражданскому праву Челябинск"
-													title="Юрист по гражданскому праву">Гражданское право</a></li>
-											<li><a href="/juridicheskie-uslugi/26-jurist-po-trudovym-sporam.html"
-													alt="Юрист по трудовым спорам Челябинск"
-													title="Юрист по трудовым спорам">Трудовые споры</a></li>
-											<li><a href="/juridicheskie-uslugi/20-kreditnyj-jurist.html"
-													alt="Кредитный юрист Челябинск" title="Кредитный юрист">Кредитный
-													юрист</a></li>
-											<li><a href="/juridicheskie-uslugi/23-jurist-po-nasledstvennomu-pravu.html"
-													alt="Юрист по наследственному праву Челябинск"
-													title="Юрист по наследственному праву">Наследственное право</a></li>
-											<li><a href="/juridicheskie-uslugi/25-strahovoj-jurist.html"
-													alt="Страховой юрист Челябинск" title="Страховой юрист">Страховые
-													споры</a></li>
-										</ul>
-									</div>
-								</div>
-							</div> -->
-
-                            <!-- Меню -->
-                            <div class="col-lg-3 col-sm-6 col-md-3">
-                                <div class="footer-link-wp" role="navigation" aria-label="Основное меню сайта">
-                                    <div class="footer-link">
-                                        <h4 class="h4-title footer-title">Меню</h4>
-                                        <ul>
-                                            <li><a href=""
-                                                    title="Главная страница юридической компании в Челябинске">Главная</a>
-                                            </li>
-                                            <li><a href="#about" title="О компании и юристах">О нас</a></li>
-                                            <li><a href="#services" title="Все юридические услуги">Услуги</a></li>
-                                            <li><a href="#testimonials" title="Отзывы клиентов о юристах">Отзывы</a>
-                                            </li>
-                                            <li><a href="#contacts" title="Связаться с юристом">Контакты</a></li>
-                                        </ul>
+                                    <!-- Контакты -->
+                                    <div class="col-lg-6">
+                                        <div class="footer-contact">
+                                            <h4 class="h4-title footer-title">Контакты</h4>
+                                            <ul>
+                                                <li>
+                                                    <span class="icon" aria-hidden="true"><i
+                                                            class="fas fa-map-marker-alt"></i></span>
+                                                    <div class="text" style="max-width: 385px;">
+                                                        <div>
+                                                            <span>г. Челябинск, Комсомольский проспект, 10/7,офис 201
+                                                                (по карте д.10 с7)</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <span class="icon" aria-hidden="true"><i
+                                                            class="fas fa-envelope"></i></span>
+                                                    <div class="text">
+                                                        <div>
+                                                            <a href="mailto:biznes-sovetnik174@mail.ru"
+                                                                title="Написать письмо юристу в Челябинске">
+                                                                biznes-sovetnik174@mail.ru
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <span class="icon" aria-hidden="true"><i
+                                                            class="fas fa-phone-alt"></i></span>
+                                                    <div class="text">
+                                                        <div>
+                                                            <a href="tel:+79822937717"
+                                                                title="Позвонить юристу в Челябинске">
+                                                                +7 (982) 293-77-17
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <span class="icon" aria-hidden="true"><i
+                                                            class="fab fa-telegram"></i></span>
+                                                    <div class="text">
+                                                        <div>
+                                                            <a href="https://t.me/potemkina_yurist"
+                                                                title="Написать в Telegram" target="_blank">
+                                                                Канал в Telegram
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <span class="icon" aria-hidden="true"><i
+                                                            class="fab fa-vk"></i></span>
+                                                    <div class="text">
+                                                        <div>
+                                                            <a href="https://vk.com/yurist_potemkina"
+                                                                title="Мы ВКонтакте" target="_blank">
+                                                                Группа в ВКонтакте
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
 
 
+                                    <!-- Меню -->
+                                    <!-- <div class="col-lg-3 col-sm-6">
+                                        <div class="footer-link-wp" role="navigation" aria-label="Основное меню сайта">
+                                            <div class="footer-link">
+                                                <h4 class="h4-title footer-title">Меню</h4>
+                                                <ul>
+                                                    <li><a href="#about" title="О компании и юристах">О нас</a></li>
+                                                    <li><a href="#services" title="Все юридические услуги">Услуги</a>
+                                                    </li>
+                                                    <li><a href="#testimonials"
+                                                            title="Отзывы клиентов о юристах">Отзывы</a>
+                                                    </li>
+                                                    <li><a href="#contacts" title="Связаться с юристом">Контакты</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div> -->
 
-                            <!-- Контакты -->
-                            <div class="col-lg-3 col-md-5">
-                                <div class="footer-contact">
-                                    <h4 class="h4-title footer-title">Контакты</h4>
-                                    <ul>
-                                        <li>
-                                            <span class="icon" aria-hidden="true"><i
-                                                    class="fas fa-map-marker-alt"></i></span>
-                                            <div class="text">
-                                                <div>
-                                                    <span>г. Челябинск, Комсомольский проспект, 10/7,офис 201
-                                                        (по карте д.10 с7)</span>
-                                                </div>
+                                    <!-- Карта -->
+                                    <div class="col-lg-6">
+                                        <div class="footer-map">
+                                            <h4 class="h4-title footer-title">Мы на карте</h4>
+                                            <div class="map-container">
+                                                <iframe
+                                                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab57b50aa7a666a939cd7bdd4e9afa608332d7fb22fffc49ebb297b2deab71f50&amp;source=constructor"
+                                                    width="100%" height="300" frameborder="0"></iframe>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <span class="icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
-                                            <div class="text">
-                                                <div>
-                                                    <a href="mailto:biznes-sovetnik174@mail.ru"
-                                                        title="Написать письмо юристу в Челябинске">
-                                                        biznes-sovetnik174@mail.ru
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <span class="icon" aria-hidden="true"><i
-                                                    class="fas fa-phone-alt"></i></span>
-                                            <div class="text">
-                                                <div>
-                                                    <a href="tel:+79822937717" title="Позвонить юристу в Челябинске">
-                                                        +7 (982) 293-77-17
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -921,16 +899,46 @@
 
                     <!-- Нижний блок -->
                     <div class="footer-bottom">
-                        <div class="footer-logo">
-                            <a href="" title="Юрист по семейному и наследственному праву Челябинск">
-                                <img src="images/logow.png" height="47" alt="Логотип Юридической службы Челябинск">
-                            </a>
-                        </div>
-                        <div class="copy-right">
-                            <p>
-                                Copyright © <span id="copy-right-year">2025</span>
-                                Юридическая Служба Челябинск. Все права защищены.
-                            </p>
+                        <div class="d-flex flex-column align-items-center w-100">
+                            <!-- Логотип -->
+                            <!-- <div class="footer-logo">
+                                <a href="" title="Юрист по семейному и наследственному праву Челябинск">
+                                    <img src="images/logow.png" height="47" alt="Логотип Юридической службы Челябинск">
+                                </a>
+                            </div> -->
+
+                            <!-- Юридические документы -->
+                            <div class="footer-legal-links">
+                                <ul class="list-inline mb-2">
+                                    <li class="list-inline-item">
+                                        <a href="./terms.html" title="Пользовательское соглашение"
+                                            class="text-white opacity-75 hover-opacity-100">
+                                            Пользовательское соглашение
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="./policy.html" title="Политика конфиденциальности"
+                                            class="text-white opacity-75 hover-opacity-100">
+                                            Политика конфиденциальности
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="./politika-obrabotki-personalnyh-dannyh.html"
+                                            title="Политика обработки персональных данных"
+                                            class="text-white opacity-75 hover-opacity-100">
+                                            Обработка данных
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Копирайт -->
+                            <div class="copy-right">
+                                <p class="mb-0">
+                                    Copyright © <span id="copy-right-year">2025</span>
+                                    ООО «Бизнес Вправе». Все права защищены.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -955,7 +963,7 @@
                 </div>
                 <div class="modal-body">
                     <p class="modal-description">Позвоните нам по телефону
-                        <a href="tel:+79822937717" title="Позвонить юристу в Челябинске">
+                        <a href="tel:+79822937717" class="link" title="Позвонить юристу в Челябинске">
                             +7 (982) 293-77-17
                         </a>
                         или заполните форму ниже,
@@ -992,7 +1000,7 @@
                             <div class="form-box checkbox">
                                 <label>
                                     <input type="checkbox" required> Подтверждаю, что соглашаюсь с
-                                    <a href="./policy.html" target="_blank" rel="nofollow">политикой
+                                    <a href="./policy.html" class="link" target="_blank" rel="nofollow">политикой
                                         конфиденциальности</a>.
                                 </label>
                             </div>
@@ -1186,9 +1194,6 @@
     <!-- Fancybox JS Link -->
     <script src="js/jquery.fancybox.min.js"></script>
 
-    <!-- Font Awesome JS Link -->
-    <script src="js/font-awesome.min.js"></script>
-
     <!-- Wow Animation JS Link -->
     <script src="js/wow.min.js"></script>
 
@@ -1197,6 +1202,7 @@
     <script src="js/custom-scroll-count.js"></script>
 
     <script src="js/lib.js"></script>
+
 
 
 
