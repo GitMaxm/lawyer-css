@@ -127,6 +127,12 @@ p {
   margin-bottom: 25px;
 }
 
+@media (max-width: 992px) {
+  p {
+    margin-bottom: 13px;
+  }
+}
+
 p:last-child {
   margin-bottom: 0;
 }
@@ -1255,17 +1261,33 @@ label {
   padding-left: 27px;
 }
 
-.about-us-content .faq-accordion {
-  margin-top: 25px;
-}
-
 .faq-accordion {
   display: flex;
-  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+}
+.faq-accordion-box {
+  width: 40%;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s;
+}
+@media (max-width: 992px) {
+  .faq-accordion {
+    flex-direction: column;
+    align-items: center;
+  }
+  .faq-accordion-box {
+    width: 100%;
+  }
 }
 
-.faq-accordion-box {
-  margin-bottom: 33px;
+.faq-accordion-box:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .faq-accordion-box:last-child {
@@ -1723,10 +1745,6 @@ label {
 .testimonials-title .h2-title {
   margin-bottom: 38px;
 }
-.testimonials-title p {
-  margin: 0 auto;
-  max-width: 700px;
-}
 
 .testimonial-box {
   width: 100%;
@@ -1964,6 +1982,11 @@ label {
   .team-social:hover ul li:nth-child(3) {
     top: 0;
   }
+}
+
+.seo-text {
+  margin: 0 auto;
+  max-width: 700px;
 }
 
 /*==========Special Team CSS End==========*/
@@ -3507,23 +3530,6 @@ label {
 }
 
 /*==========Our Pricing Page CSS End==========*/
-
-/*==========FAQ Page CSS Start==========*/
-.page-main-faq {
-  margin: var(--spacing) 0;
-}
-
-.faq-lists .row {
-  row-gap: 20px;
-}
-
-@media screen and (min-width: 992px) {
-  .faq-lists .row {
-    --bs-gutter-x: 50px;
-  }
-}
-
-/*==========FAQ Page CSS End==========*/
 
 /*==========Blog Grid Page CSS Start==========*/
 .page-blog-list {

@@ -102,23 +102,26 @@ $(document).ready(function ($) {
 
     // FAQ Accordion JS Start
     jQuery(".faq-accordion .faq-accordion-content").hide();
-    jQuery(".faq-accordion").each(function () {
-        jQuery(this).find("> div:eq(0) .faq-accordion-title").addClass("active-faq");
-        jQuery(this).find("> div:eq(0) .faq-accordion-content").slideDown();
-    });
-    jQuery(".faq-accordion-title").click(function (j) {
-        var dropDown = jQuery(this).closest(".faq-accordion-box").find(".faq-accordion-content");
-        jQuery(this).closest(".faq-accordion").find(".faq-accordion-content").not(dropDown).slideUp();
-        if (jQuery(this).hasClass("active-faq")) {
-            jQuery(this).removeClass("active-faq");
+
+    jQuery(".faq-accordion-title").click(function (e) {
+        const $title = jQuery(this);
+        const $content = $title.closest(".faq-accordion-box").find(".faq-accordion-content");
+
+        // Переключаем активное состояние текущего блока
+        $title.toggleClass("active-faq");
+
+        if ($title.hasClass("active-faq")) {
+            $title.attr("aria-expanded", "true");
+            $content.stop(false, true).slideDown();
         } else {
-            jQuery(this).closest(".faq-accordion").find(".faq-accordion-title.active-faq").removeClass("active-faq");
-            jQuery(this).addClass("active-faq");
+            $title.attr("aria-expanded", "false");
+            $content.stop(false, true).slideUp();
         }
-        dropDown.stop(false, true).slideToggle();
-        j.preventDefault();
+
+        e.preventDefault();
     });
     // FAQ Accordion JS End
+
 
     // Case Study Slider JS Start
     const case_study_slider = new Swiper(".case-study-slider", {
