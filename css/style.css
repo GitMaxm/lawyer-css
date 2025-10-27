@@ -39,6 +39,7 @@ Theme Version: 1.0
 31.404 Error Page CSS
 32.Contact Us Page CSS
 33.Responsive CSS
+34.thx Page - doc CSS
 ==========*/
 
 /*==========Common CSS Start==========*/
@@ -74,7 +75,7 @@ body {
   width: 100%;
   font-family: var(--body-font);
   overflow-x: hidden !important;
-  font-size: 15px;
+  font-size: clamp(0.875rem, 0.804rem + 0.36vw, 1.125rem); /* 14-18 */
   line-height: 25px;
   color: var(--common-color);
 }
@@ -120,7 +121,7 @@ img {
 }
 
 p {
-  font-size: 15px;
+  font-size: clamp(0.875rem, 0.804rem + 0.36vw, 1.125rem); /* 14-18 */
   line-height: 25px;
   color: var(--common-color);
   font-weight: normal;
@@ -971,11 +972,11 @@ label {
   margin: 60px 0;
 }
 
-.banner-content p {
+/* .banner-content p {
   font-size: 18px;
   line-height: 28px;
   margin-bottom: 33px;
-}
+} */
 
 .banner-img {
   position: relative;
@@ -1202,6 +1203,7 @@ label {
 
 .feature-box .text p {
   color: var(--white-color);
+  font-size: 14px;
   opacity: 0.8;
 }
 
@@ -6469,9 +6471,7 @@ label {
     z-index: 9994;
   }
 }
-ul.xfieldimagegallery.foto-praktiki {
-  /* padding: 0 30px 0; */
-}
+
 section#services ul.xfieldimagegallery.foto-praktiki li {
   list-style-type: none;
 }
@@ -6510,6 +6510,139 @@ span .icon {
 }
 /*==========Responsive CSS End==========*/
 
-.widthtext-center {
-  text-align: center;
+/*==========thx Page - doc start==========*/
+/* Стили для модального окна с документами */
+.documents-list {
+  margin: 20px 0;
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 20px;
+  background: var(--bg-color);
+  box-shadow: var(--primary-shadow);
 }
+
+.document-item {
+  margin: 12px 0;
+}
+
+.document-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--white-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  gap: 12px;
+}
+
+.document-link:hover {
+  background: var(--primary-color);
+  color: var(--white-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--secondary-shadow);
+}
+
+.document-note {
+  margin-top: 20px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 992px) {
+  .thank-you-message {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    margin: 20px;
+    width: calc(100% - 40px);
+    max-height: calc(100vh - 40px);
+  }
+
+  .documents-list {
+    padding: 15px;
+    margin: 15px 0;
+  }
+
+  .document-link {
+    padding: 10px 12px;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .document-item {
+    margin: 10px 0;
+  }
+
+  .document-note {
+    font-size: 13px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    margin: 10px;
+    width: calc(100% - 20px);
+    max-height: calc(100vh - 20px);
+  }
+
+  .documents-list {
+    padding: 12px;
+    margin: 12px 0;
+  }
+
+  .document-link {
+    padding: 8px 10px;
+  }
+
+  .document-note {
+    font-size: 12px;
+  }
+}
+
+/* Дополнительные улучшения для лучшего UX */
+/* .modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.documents-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.documents-list::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 3px;
+}
+
+.documents-list::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 3px;
+} */
+
+/* Анимация появления */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content {
+  animation: slideIn 0.3s ease-out;
+}
+/*==========thx Page - doc End==========*/
